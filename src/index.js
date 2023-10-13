@@ -8,37 +8,37 @@
 							Result: ✅ SUCCESS
 */
 
-// Declare variables
-var x = { name: "Bart", age: 12 };
-var y = { name: "Lisa", age: 10 };
+const people = [
+  {
+    name: "Bart",
+    age: 12,
+  },
+  {
+    name: "Lisa",
+    age: 10,
+  },
+  {
+    name: "Maggie",
+    age: 1,
+  },
+];
 
-// put into array
-var a = [x, y, { name: "Maggie", age: 1 }];
+let result = 0;
 
-// create the function
-function p(p) {
-  console.log(p.name);
+function printNames(people) {
+  people.map((person) => console.log(person.name));
 }
 
-// show all the names first
-p(x);
-p(y);
-p(a[2]);
+printNames(people);
 
-var result = 0;
-
-function cmpInpt(p) {
-  // check the input matches
-  if (p.age === getInputAge(p)) {
-    // add to result
-    result += 1; // increment for each correctly input age
-  }
+function compareInputAges(people) {
+  people.forEach((person) => {
+    if (person.age === getInputAge(person)) result += 1;
+  });
 }
 
 // check all the inputs match
-cmpInpt(x);
-cmpInpt(y);
-cmpInpt(a[2]);
+compareInputAges(people);
 
 // ⛔🚫 STOP TIDYING! You're done ✅
 
